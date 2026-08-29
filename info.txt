@@ -3,3 +3,5 @@ cluster =  storage + performance
 database 
 
 cloud = mongodb atlas
+
+find() method always return data in array to be precise in array of objects if there are multiple objects 
