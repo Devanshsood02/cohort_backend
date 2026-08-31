@@ -42,7 +42,9 @@ app.delete("/api/notes/:id", async(req,res)=>{
 
 
 app.patch("/api/notes/:id", async(req,res)=>{
-    
+    const {id}= req.params
+
+    ``
 })
 
 module.exports = app;
