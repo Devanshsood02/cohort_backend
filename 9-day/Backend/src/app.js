@@ -55,6 +55,12 @@ app.patch("/api/notes/:id", async (req, res) => {
     const { id } = req.params;
     const { title, description } = req.body;
 
+       const updatedNotes = await noteModel.findByIdAndUpdate(
+        id,
+        { title, description },
+        { new: true }
+    );
+
 
 
 module.exports = app;
