@@ -63,7 +63,7 @@ app.patch("/api/notes/:id", async (req, res) => {
 
         res.status(200).json({
         message: "Note Updated Successfully",
-       
+        note: updatedNotes
     });
 });
 
