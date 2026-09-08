@@ -28,45 +28,40 @@ app.get("/api/notes", async (req, res) => {
   });
 });
 
-app.delete("/api/notes/:id", async(req,res)=>{
+app.delete("/api/notes/:id", async (req, res) => {
+  const { id } = req.params;
 
-    const {id} = req.params
+  const deletedNote = await noteModel.findByIdAndDelete(id);
 
-  const deletedNote=  await noteModel.findByIdAndDelete(id)
-
-    res.status(200).json({
-        message:"Note Deleted Sucessfully",
-        note:deletedNote.title
-    })
-})
-
+  res.status(200).json({
+    message: "Note Deleted Sucessfully",
+    note: deletedNote.title,
+  });
+});
 
 // app.patch("/api/notes/:id", async(req,res)=>{
 //     const {id}= req.params
 
 //     const updatedNotes = await noteModel.findByIdAndUpdate( {id,title, description }, { new: true })
 
-    
 // })
 
-
-
 app.patch("/api/notes/:id", async (req, res) => {
-    const { id } = req.params;
-    const { title, description } = req.body;
+  const { id } = req.params;
+  const { title, description } = req.body;
 
-       const updatedNotes = await noteModel.findByIdAndUpdate(
-        id,
-        { title, description },
-        { new: true }
-    );
+  const updatedNotes = await noteModel.findByIdAndUpdate(
+    id,
 
-        res.status(200).json({
-        message: "Note Updated Successfully",
-        note: updatedNotes
-    });
+    { title, description },
+    { new: true },
+  );
+
+  res.status(200).json({
+    message: "Note Updated Successfully",
+
+    note: updatedNotes,
+  });
 });
-
-
 
 module.exports = app;
