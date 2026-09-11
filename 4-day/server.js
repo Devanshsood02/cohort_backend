@@ -12,6 +12,8 @@ app.get("/", (req, res) => {
 
 app.post("/notes", (req, res) => {
   const { title, description } = req.body;
+  3
+  
 
   console.log(req.body);
 
