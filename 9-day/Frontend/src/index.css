@@ -18,8 +18,15 @@ html{
 
 .note {
   background-color: #494949;
-  pad: 1rem;
+  padding: 1rem;
   border-radius: 0.7rem;
   max-width: 20rem;
   color: white;
+}
+
+.notes {
+  display: flex;
+  gap: 1rem;
+  padding-block: 1rem;
+  padding-inline: 3rem
 }
